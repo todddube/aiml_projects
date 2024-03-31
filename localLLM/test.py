@@ -1,20 +1,15 @@
 # my hugging face token
 # "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"
-import os 
-import transformers 
-from transformers import AutoModel, AutoTokenizer 
+import torch
+from transformers import DistilBertTokenizer, DistilBertForSequenceClassification
 
-model_name = os.getenv("MODEL_NAME") 
-model_config_path = os.getenv("MODEL_CONFIG")
+tokenizer = DistilBertTokenizer.from_pretrained("distilbert-base-uncased-finetuned-sst-2-english")
+model = DistilBertForSequenceClassification.from_pretrained("distilbert-base-uncased-finetuned-sst-2-english")
 
-# load the model
-model = AutoModel.from_pretrained(model_name, config=model_config_path) 
-tokenizer = AutoTokenizer.from_pretrained(model_name) 
+inputs = tokenizer("Hello, my dog is cute", return_tensors="pt")
+print(inputs)
+with torch.no_grad():
+    logits = model(**inputs).logits
 
-# Example usage:
-input_text = "Hello, world!" 
-tokens = tokenizer(input_text) 
-outputs = model(tokens)
-
-# Print the outputs
-print(outputs) 
+predicted_class_id = logits.argmax().item()
+print(model.config.id2label[predicted_class_id])
