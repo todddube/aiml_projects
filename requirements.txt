@@ -34,7 +34,7 @@ httpcore==1.0.4
 httpx==0.27.0
 huesdk==1.7
 huggingface-hub==0.23.0
-idna==3.6
+idna==3.7
 ifaddr==0.2.0
 intel-openmp==2021.4.0
 ipykernel==6.29.3
