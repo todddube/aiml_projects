@@ -10,6 +10,3 @@ response = ollama.chat(
     ],
 )
 print(response["message"]["content"])
-stat = ollama.stop("llama3)
-                   
-print (state)
