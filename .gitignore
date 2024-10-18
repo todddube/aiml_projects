@@ -5,3 +5,5 @@
 /localLLM/env
 localLLM/.env
 localLLM/.env
+.DS_Store
+gpt4all/.DS_Store
