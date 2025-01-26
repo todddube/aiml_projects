@@ -1,4 +1,6 @@
 # python env how-to short version
+- This is all my python AI/ML/GenAI stuff
+- 
 - org article: https://medium.com/@asheshnathmishra/how-to-create-a-virtual-environment-in-python-on-a-windows-11-system-2023-80cd37c14db3
 1. Now coming to the steps, first navigate to a folder where you want to create the venv.
 2. create a folder “venv” inside Downloads
