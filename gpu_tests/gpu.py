@@ -15,7 +15,7 @@ def func2(a):
         a[idx] += 1
 
 if __name__ == "__main__":
-    n = 10000000000                         
+    n = 10000000                           
     a = np.ones(n, dtype=np.float64)
      
     start = timer()
